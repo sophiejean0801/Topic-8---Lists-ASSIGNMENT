@@ -11,17 +11,17 @@
             int inNumber, listSize, maxNumber, minNumber;
             bool done = false;
 
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    Console.WriteLine("Enter a colour:");
-            //    string input = Console.ReadLine();
-            //    colour.Add(input);
-            //}
-            //Console.WriteLine("The colours you entered are:");
-            //Console.Write(string.Join(", ", colour));
-            //Console.ReadLine();
-            //Console.WriteLine("The random one is: ");
-            //Console.WriteLine(colour[number.Next(colour.Count)]);
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Enter a colour:");
+                string input = Console.ReadLine();
+                colour.Add(input);
+            }
+            Console.WriteLine("The colours you entered are:");
+            Console.Write(string.Join(", ", colour));
+            Console.ReadLine();
+            Console.WriteLine("The random one is: ");
+            Console.WriteLine(colour[number.Next(colour.Count)]);
 
             // Assignment 2
 
@@ -32,10 +32,11 @@
             minNumber = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter the maximum number:");
             maxNumber = Convert.ToInt32(Console.ReadLine());
-            while (minNumber >= maxNumber)
+            if (minNumber >= maxNumber)
             {
-                Console.WriteLine("The minimum number must be less than the maximum number. Please enter the minimum number again:");
-                minNumber = Convert.ToInt32(Console.ReadLine());
+                minNumber = maxNumber;
+                maxNumber = minNumber;
+                Console.WriteLine("I swapped your minimum and maximum.");
             }
             for (int i = 0; i < listSize; i++)
             {
@@ -76,8 +77,18 @@
             {
                 Console.Write(num + " ");
             }
-            Console.WriteLine("Lets make a new list");
+            Console.WriteLine("Lets make a new list!");
             List<int> numbers2 = new List<int>();
+            listSize = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the minimum number:");
+            minNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the maximum number:");
+            maxNumber = Convert.ToInt32(Console.ReadLine());
+            while (minNumber >= maxNumber)
+            {
+                Console.WriteLine("The maximum number must be more than the minimum number. Please enter the maximum number again:");
+                minNumber = Convert.ToInt32(Console.ReadLine());
+            }
             for (int i = 0; i < listSize; i++)
             {
                 numbers.Add(number.Next(minNumber, maxNumber));
