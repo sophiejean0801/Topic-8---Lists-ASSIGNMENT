@@ -77,8 +77,9 @@
             {
                 Console.Write(num + " ");
             }
-            Console.WriteLine("Lets make a new list!");
             List<int> numbers2 = new List<int>();
+            Console.WriteLine("Lets make a new list!");
+            Console.WriteLine("Enter the size of the list:");
             listSize = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter the minimum number:");
             minNumber = Convert.ToInt32(Console.ReadLine());
