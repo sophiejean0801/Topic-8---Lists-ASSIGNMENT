@@ -36,7 +36,7 @@
             {
                 minNumber = maxNumber;
                 maxNumber = minNumber;
-                Console.WriteLine("I swapped your minimum and maximum.");
+                Console.WriteLine("Your maximum and minimum are the same.");
             }
             for (int i = 0; i < listSize; i++)
             {
@@ -84,14 +84,20 @@
             minNumber = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter the maximum number:");
             maxNumber = Convert.ToInt32(Console.ReadLine());
-            while (minNumber >= maxNumber)
+            if (minNumber >= maxNumber)
             {
-                Console.WriteLine("The maximum number must be more than the minimum number. Please enter the maximum number again:");
-                minNumber = Convert.ToInt32(Console.ReadLine());
+                minNumber = maxNumber;
+                maxNumber = minNumber;
+                Console.WriteLine("Your maximum and minimum are the same.");
             }
             for (int i = 0; i < listSize; i++)
             {
                 numbers.Add(number.Next(minNumber, maxNumber));
+            }
+            Console.WriteLine("The numbers in the list are:");
+            foreach (int num in numbers)
+            {
+                Console.Write(num + " ");
             }
 
 
